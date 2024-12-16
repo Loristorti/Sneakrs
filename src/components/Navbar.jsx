@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
-import { Menu } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div className='flex justify-between items-center h-20 px-6 bg-gradient-to-r from-green-800 via-green-500 to-green-300 text-white'>
-      {/* Logo */}
-      <h1 className='text-xl font-bold text-yellow-300'>ShopTesMercurials </h1>
+    <div className="flex justify-between items-center h-20 px-6 bg-gradient-to-r from-green-800 via-green-500 to-green-300 text-white">
+      <h1 className="text-xl font-bold text-yellow-300">
+        <Link to="/">ShopTesMercurials</Link>
+      </h1>
 
-      {/* Menu Button */}
-      <div className='relative'>
-        <button
-          onClick={toggleMenu}
-          className='bg-yellow-300 text-green-500 px-4 py-2 rounded-md hover:bg-yellow-400 focus:outline-none transition-colors duration-300'
+      
+      <div className="flex space-x-4">
+        <Link to="/"className="bg-yellow-400 text-green-800 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-300"
         >
-          <Menu />
-        </button>
-
-        {/* Dropdown Menu */}
-        {isMenuOpen && (
-          <ul className='absolute mt-2 right-0 w-40 bg-green-400 text-white rounded-md shadow-lg'>
-            <li className='p-2 hover:bg-yellow-400 cursor-pointer'>Nike</li>
-            <li className='p-2 hover:bg-yellow-400 cursor-pointer'>Puma</li>
-            <li className='p-2 hover:bg-yellow-400 cursor-pointer'>Adidas</li>
-            <li className='p-2 hover:bg-yellow-400 cursor-pointer'>New Balance</li>
-          </ul>
-        )}
+          Accueil
+        </Link>
+        <Link to="/register"className="bg-yellow-400 text-green-800 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-300"
+        >
+          S'inscrire
+        </Link>
+        <Link to="/login"className="bg-yellow-400 text-green-800 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-300"
+        >
+          Se connecter
+        </Link>
       </div>
     </div>
   );
