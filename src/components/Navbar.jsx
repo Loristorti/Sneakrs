@@ -22,6 +22,12 @@ const Navbar = () => {
         >
           Se connecter
         </Link>
+        <Link
+    to="/wishlist"
+    className="bg-yellow-400 text-green-800 px-4 py-2 rounded-md hover:bg-yellow-500 transition duration-300"
+  >
+    Wishlist
+  </Link>
       </div>
     </div>
   );
